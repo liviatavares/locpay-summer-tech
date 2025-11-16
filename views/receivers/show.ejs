@@ -1,0 +1,48 @@
+<h1><%= receiver.name %></h1>
+
+<p class="text-muted">
+  Saldo atual: <strong>R$ <%= (receiver.balance/100).toFixed(2) %></strong>
+</p>
+
+<hr>
+
+<h3>Histórico de Operações</h3>
+
+<% if (operations.length === 0) { %>
+  <p class="text-muted">Nenhuma operação ainda.</p>
+<% } else { %>
+
+<table class="table table-bordered table-striped mt-3">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Bruto (R$)</th>
+      <th>Taxa (R$)</th>
+      <th>Líquido (R$)</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% operations.forEach(op => { %>
+      <tr>
+        <td><a href="/operations/<%= op.id %>">#<%= op.id %></a></td>
+        <td>R$ <%= (op.gross_value/100).toFixed(2) %></td>
+        <td>R$ <%= (op.fee/100).toFixed(2) %></td>
+        <td>R$ <%= (op.net_value/100).toFixed(2) %></td>
+        <td>
+          <% if (op.status === 'pending') { %>
+            <span class="badge bg-warning text-dark">Pendente</span>
+          <% } else { %>
+            <span class="badge bg-success">Confirmada</span>
+          <% } %>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<% } %>
+
+<hr>
+
+<a class="btn btn-secondary" href="/receivers">Voltar</a>
