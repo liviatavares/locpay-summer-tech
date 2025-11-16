@@ -204,7 +204,7 @@ Template principal que envolve todas as páginas, contendo:
 Página inicial estática, estilizada conforme design detalhado na seção `4.5.`.
 
 <div align="center">
-<sub>Figura 06: Página inicial.</sub>
+<sub>Figura 07: Página inicial.</sub>
 </div>
 <div align="center">
 <img src="public/images/inicio.png" alt="Página inicial." style="max-width:900px; width:100%; height:auto;">
@@ -221,7 +221,7 @@ Página inicial estática, estilizada conforme design detalhado na seção `4.5.
 - `create.ejs`: Criar novo recebedor
 
 <div align="center">
-<sub>Figura 07: Lista de recebedores.</sub>
+<sub>Figura 08: Lista de recebedores.</sub>
 </div>
 <div align="center">
 <img src="public/images/receivers.png" alt="Lista de recebedores." style="max-width:900px; width:100%; height:auto;">
@@ -232,7 +232,7 @@ Página inicial estática, estilizada conforme design detalhado na seção `4.5.
 </div>
 
 <div align="center">
-<sub>Figura 08: Histórico de recebimentos.</sub>
+<sub>Figura 09: Histórico de recebimentos.</sub>
 </div>
 <div align="center">
 <img src="public/images/historico.png" alt="Histórico de recebimentos." style="max-width:900px; width:100%; height:auto;">
@@ -243,7 +243,7 @@ Página inicial estática, estilizada conforme design detalhado na seção `4.5.
 </div>
 
 <div align="center">
-<sub>Figura 09: Página de edição.</sub>
+<sub>Figura 10: Página de edição.</sub>
 </div>
 <div align="center">
 <img src="public/images/edit.png" alt="Página de edição." style="max-width:900px; width:100%; height:auto;">
@@ -254,7 +254,7 @@ Página inicial estática, estilizada conforme design detalhado na seção `4.5.
 </div>
 
 <div align="center">
-<sub>Figura 10: Página inicial.</sub>
+<sub>Figura 11: Página inicial.</sub>
 </div>
 <div align="center">
 <img src="public/images/create.png" alt="Página inicial." style="max-width:900px; width:100%; height:auto;">
@@ -270,7 +270,7 @@ Página inicial estática, estilizada conforme design detalhado na seção `4.5.
 - `show.ejs`: Detalhes da operação + botão “Confirmar”
 
 <div align="center">
-<sub>Figura 11: Criar operação.</sub>
+<sub>Figura 12: Criar operação.</sub>
 </div>
 <div align="center">
 <img src="public/images/operations.png" alt="Criar operação." style="max-width:900px; width:100%; height:auto;">
@@ -281,7 +281,7 @@ Página inicial estática, estilizada conforme design detalhado na seção `4.5.
 </div>
 
 <div align="center">
-<sub>Figura 12: Confirmar operação.</sub>
+<sub>Figura 13: Confirmar operação.</sub>
 </div>
 <div align="center">
 <img src="public/images/confirmar.png" alt="Confirmar operação." style="max-width:900px; width:100%; height:auto;">
@@ -333,7 +333,7 @@ Cada operação possui:
 | `/receivers/:id` | PUT | Atualizar |
 | `/receivers/:id/delete` | DELETE | Deletar |
 
-### 📌 Operações
+#### Operações
 
 | Rota | Método | Descrição |
 |------|--------|------------|
@@ -343,14 +343,14 @@ Cada operação possui:
 
 ### 5.4. Banco de Dados
 
-### Tabela `receivers`
+#### Tabela `receivers`
 ```sql
 id INTEGER PRIMARY KEY,
 name TEXT,
 balance INTEGER  -- sempre em centavos
 ```
 
-### Tabela `operations`
+#### Tabela `operations`
 
 ```sql
 id INTEGER PRIMARY KEY,
