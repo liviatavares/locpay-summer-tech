@@ -13,7 +13,7 @@ class OperationsController {
         });
     }
 
-    // Criar operação
+    // criar operação
     static create(req, res) {
         const { receiver_id } = req.body;
 
@@ -21,7 +21,7 @@ class OperationsController {
             return res.status(400).send("Recebedor inválido.");
         }
 
-        // Entrada em reais → converter para centavos
+        // entrada em reais: converter para centavos
         const grossReais = Number(req.body.gross_value);
         if (isNaN(grossReais) || grossReais <= 0) {
             return res.status(400).send("Valor bruto inválido.");
@@ -29,11 +29,11 @@ class OperationsController {
 
         const gross_value = Math.round(grossReais * 100);
 
-        // Regra: taxa 3%
+        // regra: taxa 3%
         const fee = Math.round(gross_value * 0.03);
         const net_value = gross_value - fee;
 
-        // Cria operação no banco
+        // cria operação no banco
         const op = Operation.create({
             receiver_id,
             gross_value,
@@ -45,7 +45,7 @@ class OperationsController {
         res.redirect(`/operations/${op.id}`);
     }
 
-    // Mostrar operação
+    // mostrar operação
     static show(req, res) {
         const op = Operation.findById(req.params.id);
 
@@ -59,7 +59,7 @@ class OperationsController {
         });
     }
 
-    // Confirmar operação
+    // confirmar operação
     static confirm(req, res) {
         const op = Operation.findById(req.params.id);
 
@@ -71,10 +71,10 @@ class OperationsController {
             return res.send("Operação já confirmada.");
         }
 
-        // Atualiza status no banco
+        // atualiza status no banco
         Operation.confirm(op.id);
 
-        // Credita saldo do recebedor
+        // credita saldo do recebedor
         Receiver.updateBalance(op.receiver_id, op.net_value);
 
         res.redirect(`/operations/${op.id}`);

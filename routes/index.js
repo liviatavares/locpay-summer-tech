@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
-// Página inicial
+// página inicial
 router.get('/', function(req, res, next) {
   res.render('index', {
-    title: 'LocPay API', // título que aparece no <title>
+    title: 'LocPay API',
     welcomeMessage: 'Bem-vindo ao sistema de operações financeiras da LocPay!',
     links: [
       { name: 'Recebedores', url: '/receivers' },

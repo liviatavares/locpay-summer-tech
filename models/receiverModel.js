@@ -17,11 +17,11 @@ class ReceiverModel {
     const name = data.name;
     let balance = data.balance;
 
-  // Se vier string vazia ou undefined, coloca 0
+  // se vier string vazia ou undefined, coloca 0
     if (!balance || balance === '') {
       balance = 0;
     } else {
-      // Converte de reais para centavos
+      // converte de reais para centavos
       balance = Math.round(parseFloat(balance) * 100);
     }
 

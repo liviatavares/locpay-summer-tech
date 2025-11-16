@@ -3,28 +3,28 @@ const ReceiverController = require('../controllers/receiverController');
 
 const router = express.Router();
 
-// Lista todos
+// lista todos
 router.get('/', ReceiverController.index);
 
-// Formulário de criação
+// formulário de criação
 router.get('/create', ReceiverController.createForm);
 
-// Cria novo
+// cria novo
 router.post('/', ReceiverController.create);
 
-// Mostrar um item
+// mostrar um item
 router.get('/:id', ReceiverController.show);
 
-// Formulário de edição
+// formulário de edição
 router.get('/:id/edit', ReceiverController.editForm);
 
-// Atualiza
+// atualizar
 router.post('/:id', ReceiverController.update);
 
-// Deletar
+// deletar
 router.post('/:id/delete', ReceiverController.delete);
 
-// Adicionar saldo
+// adicionar saldo
 router.post('/:id/add-balance', ReceiverController.addBalance);
 
 module.exports = router;
